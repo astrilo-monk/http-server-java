@@ -16,7 +16,7 @@ public class Server{
         while(true){
             Socket clienSocket = serverSocket.accept();
             System.out.println("Connection accepted from: "+clienSocket.getInetAddress());
-            clienSocket.close();
+            new ClientHandler(clienSocket).run();
         }
     }
 }
